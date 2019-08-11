@@ -83,7 +83,7 @@ function answer() {
             if(document.getElementsByClassName("question-number")[0].innerText === "10 / 10"){
                 document.getElementById(question_and_answer[i][1]).click();
                 document.getElementById("next-question").click();
-                setTimeout(function() {CLICK TICKET;} , getRandomNum()); // todo Here need to click on one img to win ticket
+                setTimeout(function() {clickImage()} , getRandomNum()); // todo Here need to click on one img to win ticket
             }else{
                 document.getElementById(question_and_answer[i][1]).click();
                 document.getElementById("next-question").click();
@@ -101,4 +101,16 @@ function clickImage(){
     setTimeout(function() {document.getElementById("lose").click();} , getRandomNum());
 }
 
+function page_load(){
+    let ticket = (typeof (document.getElementsByClassName("circle col-xs-4 col-sm-3 col-md-4 col-lg-3")[0]) != 'undefined' && document.getElementsByClassName("circle col-xs-4 col-sm-3 col-md-4 col-lg-3")[0] != null);
+    let question = (typeof (document.getElementsByClassName("question-text")[0]) != 'undefined' && document.getElementsByClassName("question-text")[0] != null);
+    let phoneActive = (typeof (document.getElementsByClassName("title-verification")[0]) != 'undefined' && document.getElementsByClassName("title-verification")[0] != null);
 
+    if(!phoneActive){
+        if(question){
+           answer()
+        }else if (ticket){
+            clickImage()
+        }
+    }
+}
