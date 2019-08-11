@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Energy Air 2019
-// @namespace    https://github.com/wauchi/eair-bot-2019/blob/master/eair-bot.js
+// @namespace    https://github.com/wauchi/eair-bot-2019/blob/master/eairBot.js
 // @version      1.1
 // @description  Bot to play the Energy Air game
 // @author       wauchi
