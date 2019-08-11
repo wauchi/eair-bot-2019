@@ -75,6 +75,7 @@ function getRandomNum() {
 	return Math.floor(Math.random() * -999 + 1000);
 }
 
+// Function to answer all questions and go further on
 function answer() {
     let question = document.getElementsByClassName("question-text")[0].innerText;
     for (let i =0; i < question_and_answer.length; i++){
@@ -91,6 +92,13 @@ function answer() {
             break;
         }
     }
+}
+
+// Function to select image at the end of the game
+function clickImage(){
+    let clickedImage = Math.floor(Math.random() * 13) + 4;
+    document.getElementsByTagName("img")[clickedImage].click();
+    setTimeout(function() {document.getElementById("lose").click();} , getRandomNum());
 }
 
 
