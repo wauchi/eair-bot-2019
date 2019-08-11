@@ -38,6 +38,8 @@ let question_and_answer = [
     ["Was verlangte Nena am Energy Air 2016?", "Eine komplett weisse Garderobe"],
     ["Wann findet das Energy Air 2019 statt?", "7. September 2019"]
 ];
+// After body of site is loaded game gets played
+window.addEventListener("load", playGame);
 
 // Restart game after certain purpose
 // Purpose: successful run
@@ -101,7 +103,8 @@ function clickImage(){
     setTimeout(function() {document.getElementById("lose").click();} , getRandomNum());
 }
 
-function page_load(){
+// Function to play the game
+function playGame(){
     let ticket = (typeof (document.getElementsByClassName("circle col-xs-4 col-sm-3 col-md-4 col-lg-3")[0]) != 'undefined' && document.getElementsByClassName("circle col-xs-4 col-sm-3 col-md-4 col-lg-3")[0] != null);
     let question = (typeof (document.getElementsByClassName("question-text")[0]) != 'undefined' && document.getElementsByClassName("question-text")[0] != null);
     let phoneActive = (typeof (document.getElementsByClassName("title-verification")[0]) != 'undefined' && document.getElementsByClassName("title-verification")[0] != null);
